@@ -5,14 +5,20 @@ const botaoImpar = document.getElementById('botao-impar')
 const botaoPar = document.getElementById('botao-par')
 const botaoMultiplos = document.getElementById('botao-multiplos')
 
+
+
 function gerarSequencia () {
     const quantidade = document.getElementById ('quantidade')
     const resultado = document.getElementById ('resultado')
 
     resultado.textContent = " " 
     for (let contador=1;contador<=quantidade.value;contador++){
-        resultado.textContent += " " + contador
+    //     resultado.textContent += " " + contador
+    const span = document.createElement('span')
+    span.textContent = contador
+    resultado. appendChild (span)
     } 
+
 }
 
 function gerarNumeroImpares () {
@@ -21,7 +27,10 @@ function gerarNumeroImpares () {
 
     resultadoImpar.textContent = " " 
     for ( let contador=1;contador<=quantidade.value;contador += 2){
-        resultadoImpar.textContent += " " + contador
+        // resultadoImpar.textContent += " " + contador
+        const span = document.createElement('span')
+        span.textContent = contador
+        resultadoImpar. appendChild (span)
     }
 }
 
@@ -31,7 +40,10 @@ function gerarNumeroPar () {
 
     resultadoPar.textContent = " " 
     for ( let contador=2;contador<=quantidade.value;contador += 2){
-        resultadoPar.textContent += " " + contador
+        // resultadoPar.textContent += " " + contador
+        const span = document.createElement('span')
+        span.textContent = contador
+        resultadoPar. appendChild (span)
     }
 }
 
@@ -41,9 +53,13 @@ function gerarNumeroMultiplos () {
 
     resultadoMultiplos.textContent = " " 
     for ( let contador=5;contador<=quantidade.value;contador += 5){
-        resultadoMultiplos.textContent += " " + contador
+        // resultadoMultiplos.textContent += " " + contador
+        const span = document.createElement('span')
+        span.textContent = contador
+        resultadoMultiplos. appendChild (span)
     }
 }
+
 
 botaoSequencia.addEventListener('click', gerarSequencia)
 botaoImpar.addEventListener('click' , gerarNumeroImpares)
